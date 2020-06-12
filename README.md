@@ -10,3 +10,9 @@ To follow this post, you should be familiar with:
 
 # Training the model
 
+
+# Referencias
+
+ * [FastAPI and Scikit-Learn: Easily Deploy Models](https://nickc1.github.io/api,/scikit-learn/2019/01/10/scikit-fastapi.html)
+ * [FastAPI. Deployment](https://fastapi.tiangolo.com/deployment/)
+ * [FastAPI. Imágenes de Docker oficiales](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker)
