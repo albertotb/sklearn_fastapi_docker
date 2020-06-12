@@ -1,15 +1,21 @@
-How to train a simple sklearn model, pickle it, and build an API with fastapi.
+En este repositorio vamos a:
 
-Deployment to AWS will be covered in the future.
+  1. Entrenar un modelo de sklearn
+  
+  2. Exportarlo usando pickle
+  
+  3. Construir una API con FastAPI
+  
+  4. Desplegar la API usando un contendor de Docker
 
-To follow this post, you should be familiar with:
+# Instrucciones
 
-1. Scikit-learn
-2. Docker
-3. Basics of an API
-
-# Training the model
-
+```
+git clone https://github.com/albertotb/sklearn_fastapi_docker.git
+cd sklearn_fastapi_docker
+docker build -t myapi .
+docker run -d --name myapicontainer -p 80:80 myapi
+```
 
 # Referencias
 
