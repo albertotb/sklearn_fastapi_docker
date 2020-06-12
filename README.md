@@ -1,3 +1,5 @@
+# Contenido
+
 En este repositorio vamos a:
 
   1. Entrenar un modelo de sklearn
@@ -7,6 +9,14 @@ En este repositorio vamos a:
   3. Construir una API con FastAPI
   
   4. Desplegar la API usando un contendor de Docker
+
+# Requisitos
+
+ * Python 3.6+
+
+ * Librerías `numpy`, `scikit-learn`, `fastapi` y `requests`
+
+ * [Docker](https://docs.docker.com/get-docker/) 
 
 # Instrucciones
 
