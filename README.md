@@ -10,6 +10,8 @@ En este repositorio vamos a:
   
   4. Desplegar la API usando un contendor de Docker
 
+Basado en [FastAPI and Scikit-Learn: Easily Deploy Models](https://nickc1.github.io/api,/scikit-learn/2019/01/10/scikit-fastapi.html)
+
 # Requisitos
 
  * Python 3.6+
@@ -33,6 +35,7 @@ docker run -d --name api_docker -p 8000:80 api_test
 
 # Referencias
 
+ * [Introducción a Docker](https://docs.docker.com/get-started/)
  * [FastAPI and Scikit-Learn: Easily Deploy Models](https://nickc1.github.io/api,/scikit-learn/2019/01/10/scikit-fastapi.html)
  * [FastAPI. Deployment](https://fastapi.tiangolo.com/deployment/)
  * [FastAPI. Imágenes de Docker oficiales](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker)
