@@ -1,26 +1,25 @@
+import uvicorn
 from fastapi import FastAPI
-from joblib import load
 from pydantic import  BaseModel
+from typing import List
+from joblib import load
 
-
-# define model for post request. Not needed if just implementing get
-class ModelParams(BaseModel):
-    param1: float
-    param2: float
-
+# definir modelo
+class ModelFeatures(BaseModel):
+    features: List[float]
 
 app = FastAPI()
 
-clf = load('/model/model_1.joblib')
+model = load('../model/model.pkl')
 
-def get_prediction(param1, param2):
-    
-    x = [[param1, param2]]
+def get_prediction(features):
 
-    y = clf.predict(x)[0]  # just get single value
-    prob = clf.predict_proba(x)[0].tolist()  # send to list for return
+    if len(features) != len(model.coef_):
+        return {'prediction': None}
 
-    return {'prediction': int(y), 'probability': prob}
+    x = [features]
+    y = model.predict(x)[0]
+    return {'prediction': y}
 
 
 @app.get("/")
@@ -28,20 +27,10 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/predict/{param1}/{param2}")
-def predict(param1: float, param2: float):
-
-    pred = get_prediction(param1, param2)
-
-    return pred
+@app.post("/predict/")
+def post_predict(features: ModelFeatures):
+    return get_prediction(features.features)
 
 
-@app.post("/predict-post/")
-def post_predict(params: ModelParams):
-
-    # param_dict = params.dict()
-    # print(param_dict)
-    pred = get_prediction(params.param1, params.param2)
-
-    return pred
-
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=8000)

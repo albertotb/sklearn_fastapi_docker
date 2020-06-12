@@ -23,9 +23,13 @@ En este repositorio vamos a:
 ```
 git clone https://github.com/albertotb/sklearn_fastapi_docker.git
 cd sklearn_fastapi_docker
-docker build -t myapi .
-docker run -d --name myapicontainer -p 80:80 myapi
+docker build -t api_test .
+docker run -d --name api_docker -p 8000:80 api_test
 ```
+
+# Ejercutar FastAPI
+
+`uvicorn main:app --reload`
 
 # Referencias
 
