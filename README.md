@@ -14,7 +14,7 @@ En este repositorio vamos a:
 
  * Python 3.6+
 
- * Librerías `numpy`, `scikit-learn`, `fastapi` y `requests`
+ * Librerías `numpy`, `scikit-learn`, `fastapi`, `uvicorn` y `requests`
 
  * [Docker](https://docs.docker.com/get-docker/) 
 
